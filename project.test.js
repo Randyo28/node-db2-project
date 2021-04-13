@@ -128,7 +128,10 @@ describe('server.js', () => {
     it('responds with a 400 and proper error on non-unique vin', async () => {
       await request(server).post('/api/cars').send(cars[0])
       const res = await request(server).post('/api/cars').send(cars[0])
-      expect(res.body).toHaveProperty('message', 'vin 11111111111111111 already exists')
+      expect(res.body).toHaveProperty(
+        'message',
+        'vin 11111111111111111 already exists'
+      )
     }, 500)
   })
 })

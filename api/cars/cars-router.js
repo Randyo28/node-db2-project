@@ -38,11 +38,11 @@ router.post(
   }
 )
 
-// router.use((req, res, err, next) => {
-//   res.status(500).json({
-//     customMessage: 'Something went wrong',
-//     message: err.message,
-//   })
-// })
+router.use((req, res, err, next) => {
+  res.status(500).json({
+    message: 'Something went wrong',
+    errMessage: err.message,
+  })
+})
 
 module.exports = router
